@@ -18,8 +18,9 @@ app.get('/', (req, res) => {
   res.send('http get request sent to root api endpoint!');
 });
 
-//*// @route    POST api/users
-//*// @desc     Test post route
+/** @route    POST api/users
+ *  @desc     Test post route
+ */
 
 //define a root endpoint
 app.post(
@@ -35,7 +36,7 @@ app.post(
     return res.status(400).json({ errors: errors.array() });
   } else {
     // Later we will save the user to the database
-    res.send(req.body);
+    return res.send(req.body);
         }
     }
 );
