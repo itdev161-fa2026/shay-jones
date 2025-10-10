@@ -1,4 +1,3 @@
-import c from "config";
 import mongoose from "mongoose";
 
 const PostSchema = new mongoose.Schema(

@@ -146,11 +146,12 @@ app.post('/api/auth',
 }
 );
 
-app.get("api/posts", async (req, res) => {
+app.get("/api/posts", async (req, res) => {
   try {
     const posts = await Post.find()
     .populate("user", "name")
     .sort({ createDate: -1 });
+
     res.json(posts);
   } catch (error) {
     console.error(error.message);
@@ -189,6 +190,7 @@ app.post("/api/posts",
   
   try {
     const { title, body } = req.body;
+
     const newPost = new Post({
       user: req.user.id,
       title, 
@@ -196,6 +198,7 @@ app.post("/api/posts",
     });
     
     const post = await newPost.save();
+
     await post.populate("user", "name");
 
     res.json(post);
@@ -211,7 +214,6 @@ app.put("/api/posts/:id",
   check("title", "Title is required").not().isEmpty(),
   check("body", "Body is required").not().isEmpty()
 ], 
-
   async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -221,19 +223,29 @@ app.put("/api/posts/:id",
   try {
     const { title, body } = req.body;
   
-      const newPost = new Post({
-        user: req.user.id,
-        title, 
-        body, 
-      });
+    const post = await Post.findById(req.params.id);
 
-      const post = await newPost.save();
-      await post.populate("user", "name");
-
-      res.json(post);
+    if (!post) {
+      return res.status(404).json({ msg: "Post not found" });
     }
+
+    if (post.user.toString() !== req.user.id) {
+      return res.status(401).json({ msg: "User not authorized" });
+    }
+    
+    post.title = title;
+    post.body = body;
+
+    await post.save();    
+    await post.populate("user", "name");
+
+    res.json(post);
+  }
     catch (error) {
       console.error(error.message);
+      if (error.kind === "ObjectId") {
+        return res.status(404).json({ msg: "Post not found" });
+      }
       res.status(500).send("Server error");
     }
   }
@@ -251,7 +263,9 @@ app.delete("/api/posts/:id", auth, async (req, res) => {
       return res.status(401).json({ msg: "User not authorized" });
     }
 
-    await Post.findByIdAndRemove(req.params.id);
+    // told to change this to see if delete works. 
+    await Post.findByIdAndDelete(req.params.id);
+
     res.json({ msg: "Post removed" });
   } catch (error) {
     console.error(error.message);
