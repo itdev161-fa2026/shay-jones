@@ -1,0 +1,48 @@
+/* Header wrapper */
+.header {
+    background-color: #282c34;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0, 2px, 4px, rgba(0, 0, 0, 0);
+}
+
+/* Content container (centers and limits width) */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Title area (logo + text) */
+.header-title {
+    color: white;
+    text-decoration: none;
+}
+
+/* H1 inside title */
+.header-title h1 {
+   margin: 0;
+   font-size: 1.8rem;
+}
+
+/* Navigation (links) */
+.header-nav {
+    display: flex;
+    gap: 1.5rem;
+ 
+}
+
+/* Individual nav link */
+.nav-link {
+    color: white; /* medium slate */
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover{
+    color: #61dafb;
+}
