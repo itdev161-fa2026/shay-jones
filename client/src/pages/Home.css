@@ -5,13 +5,34 @@ padding: 2rem;
 }
 
 .home-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
 margin-bottom: 2rem;
 }
 
 .home-header h1 {
 color: #282c34;
 margin: 0;
+margin-bottom: 0.5rem;
 }
+
+.create-post-button {
+padding: 0.75rem 1.5rem;
+background-color: #61dafb;
+color: #282c34;
+border: none;
+border-radius: 4px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+ .create-post-button:hover {
+   background-color: #21a1c4;
+}
+
 
 .loading, .error {
 text-align: center;
@@ -32,3 +53,40 @@ flex-direction: column;
 display: flex;
 flex-direction: column;
 }
+  .auth-message {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .auth-message a {
+    color: #61dafb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .auth-message a:hover {
+    text-decoration: underline;
+  }
+
+  .loading,
+  .error {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+  }
+
+  .error {
+    color: #d32f2f;
+  }
+
+  .no-posts {
+    text-align: center;
+    margin-top: 3rem;
+    color: #666;
+  }
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+  }
