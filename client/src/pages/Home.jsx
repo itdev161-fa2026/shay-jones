@@ -3,10 +3,12 @@ import PostCard from '../components/PostCard';
 import { getPosts } from '../services/api';
 import './Home.css';
 
+
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
 
   useEffect(() => {
     const fetchPosts = async () => {
