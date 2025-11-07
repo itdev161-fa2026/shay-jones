@@ -7,6 +7,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import auth from './middleware/auth.js';
+import cors from 'cors'; 
 
 dotenv.config();
 
@@ -15,6 +16,13 @@ const app = express();
 
 //connect to database
 connectDatabase();
+
+// app.use(cors()); //
+app.use(cors({
+  origin: 'http://localhost:5173', // your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'], // allow token header
+}));
 
 app.use(express.json({ extended: false }));
 
@@ -66,7 +74,8 @@ app.post(
     //return jsonwebtoken
     const payload = {
       user: {
-        id: user.id
+        id: user.id, 
+        name: user.name
       }
     };
 
@@ -122,7 +131,8 @@ app.post('/api/auth',
     //return jsonwebtoken
     const payload = {
       user: {
-        id: user.id
+        id: user.id,
+        name: user.name
       }
     };
 
