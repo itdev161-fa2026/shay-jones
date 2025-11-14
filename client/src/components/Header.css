@@ -2,7 +2,7 @@
 .header {
     background-color: #282c34;
     color: white;
-    padding: 1rem 0;
+    padding: 2rem 0;
     box-shadow: 0, 2px, 4px, rgba(0, 0, 0, 0);
 }
 
@@ -36,37 +36,46 @@
  
 }
 
+/* Navigation (links) */
+.header-nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
 /* Individual nav link */
 .nav-link {
     color: white; /* medium slate */
     text-decoration: none;
     font-size: 1.1rem;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     color: #61dafb;
+    transform: scale(1.1); /* subtle grow on hover */
 }
 
 .user-welcome {
-  color: #61dafb;
-  font-size: 1rem;
-  font-weight: 500;
+    color: #61dafb;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .nav-button {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
 .nav-button:hover {
-  background-color: white;
-  color: #282c34;
+    background-color: white;
+    color: #282c34;
+    transform: scale(1.05); /* subtle hover effect */
 }
