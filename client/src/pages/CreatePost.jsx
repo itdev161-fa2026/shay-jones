@@ -11,6 +11,10 @@ const CreatePost = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+    if (!user) {
+    return <div>Please log in to create a post.</div>;
+  }
+
   const handleSubmit = async (title, body) => {
     try {
       setError(null);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { jwtDecode } from 'jwt-decode';
 import { registerUser as registerUserAPI, loginUser as loginUserAPI } from '../services/api';
 import { AuthContext } from './authContext';

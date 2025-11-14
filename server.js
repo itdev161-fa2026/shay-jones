@@ -21,7 +21,7 @@ connectDatabase();
 app.use(cors({
   origin: 'http://localhost:5173', // your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'], // allow token header
+  allowedHeaders: ['Content-Type', 'x-auth-token'], // allow token header
 }));
 
 app.use(express.json({ extended: false }));
