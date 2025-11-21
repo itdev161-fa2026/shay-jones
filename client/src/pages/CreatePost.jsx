@@ -5,6 +5,9 @@ import { createPost } from '../services/api';
 import PostForm from '../components/PostForm';
 import './CreatePost.css';
 
+// ⭐ Import toast
+import { toast } from 'react-hot-toast'; 
+
 const CreatePost = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -22,6 +25,8 @@ const CreatePost = () => {
 
       const newPost = await createPost(title, body);
 
+      toast.success("Post created successfully!"); //Success Toast 
+
       // Navigate to the new post
       navigate(`/posts/${newPost._id}`);
     } catch (err) {
@@ -31,6 +36,9 @@ const CreatePost = () => {
         'Failed to create post. Please try again.';
       setError(errorMsg);
       setLoading(false);
+
+      // Error toast 
+      toast.error(errorMsg);
     }
   };
 

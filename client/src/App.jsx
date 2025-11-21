@@ -10,11 +10,29 @@ import CreatePost from './pages/CreatePost';
 import EditPost from './pages/EditPost';
 import './App.css';
 
+//Added import 
+import { Toaster } from 'react-hot-toast';
+
 function App() {
   return (
     <AuthProvider>
       <Router>
         <div className="App">
+          {/*Added Toaster Component*/}
+           <Toaster 
+            position="top-right"
+            reverseOrder={false}
+                toastOptions={{
+              duration: 4000, // default duration
+              success: {
+                duration: 3000, // success toasts auto-dismiss faster
+              },
+              error: {
+                duration: 5000, // error toasts stay longer
+              },
+            }}
+          />
+          
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
