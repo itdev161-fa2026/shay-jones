@@ -5,6 +5,9 @@ import { getPostById, updatePost } from '../services/api';
 import PostForm from '../components/PostForm';
 import './EditPost.css';
 
+// Import toast 
+import { toast } from 'react-hot-toast';
+
 const EditPost = () => {
   const { id } = useParams();
   const { user } = useContext(AuthContext);
@@ -22,7 +25,9 @@ const EditPost = () => {
 
         // Verify user owns the post
         if (user && data.user._id !== user.id) {
-          setError("You don't have permission to edit this post.");
+          const errMsg = "You don't have permission to edit this post.";
+          setError(errMsg);
+          toast.error(errMsg); // toast for permission error 
           setLoading(false);
           return;
         }
@@ -31,7 +36,9 @@ const EditPost = () => {
         setError(null);
         setLoading(false);
       } catch {
-        setError('Failed to load post. It may not exist or the server is down.');
+        const errMsg = 'Failed to load post. It may not exist or the server is down.';
+        setError(errMsg);
+        toast.error(errMsg); // Toast for load error 
         setLoading(false);
       }
     };
@@ -45,6 +52,9 @@ const EditPost = () => {
       setSubmitting(true);
 
       await updatePost(id, title, body);
+
+      // Success Toast 
+      toast.success("Post updated successfully!"); 
 
       // Navigate to the updated post
       navigate(`/posts/${id}`);
