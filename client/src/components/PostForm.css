@@ -1,7 +1,7 @@
 .post-form {
   max-width: 800px;
   margin: 0 auto;
-  background: white;
+  background: var(--card-bg);
   padding: 2.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
@@ -9,7 +9,7 @@
 
 .post-form h2 {
   margin: 0 0 2rem 0;
-  color: #282c34;
+  color: var(--text-color);
   font-size: 2rem;
 }
 
@@ -20,7 +20,7 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #282c34;
+  color: var(--text-color);
   font-weight: 500;
   font-size: 0.95rem;
 }
@@ -29,7 +29,7 @@
 .form-group textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--input-border);
   border-radius: 4px;
   font-size: 1rem;
   font-family: inherit;
@@ -39,12 +39,12 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #61dafb;
+  border-color: var(--link-color);
 }
 
 .form-group input.input-error,
 .form-group textarea.input-error {
-  border-color: #d32f2f;
+  border-color: var(--button-danger-bg);
 }
 
 .form-group textarea {
@@ -55,7 +55,7 @@
 
 .field-error {
   display: block;
-  color: #d32f2f;
+  color: var(--button-danger-bg);
   font-size: 0.85rem;
   margin-top: 0.25rem;
 }
@@ -69,8 +69,8 @@
 .submit-button {
   flex: 1;
   padding: 0.875rem;
-  background-color: #61dafb;
-  color: #282c34;
+  background-color: var(--button-primary-bg);
+  color: var(--button-text);
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -80,19 +80,19 @@
 }
 
 .submit-button:hover {
-  background-color: #21a1c4;
+  background-color: var(--button-primary-hover-bg);
 }
 
 .submit-button:disabled {
-  background-color: #b0b0b0;
+  background-color: var(--button-disabled-bg);
   cursor: not-allowed;
 }
 
 .cancel-button {
   padding: 0.875rem 2rem;
-  background-color: transparent;
-  color: #666;
-  border: 2px solid #e0e0e0;
+  background-color: var(--button-bg);
+  color: var(--color-secondary-text);
+  border: 2px solid var(--input-border);
   border-radius: 4px;
   font-size: 1rem;
   font-weight: 600;
@@ -101,8 +101,8 @@
 }
 
 .cancel-button:hover {
-  border-color: #666;
-  color: #282c34;
+  border-color: var(--link-color);
+  color: var(--text-color);
 }
 
 .cancel-button:disabled {

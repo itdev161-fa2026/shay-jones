@@ -1,15 +1,19 @@
 * {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-margin: 0;
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto','Oxygen',
-'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-background-color: #f5f5f5;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto','Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .App {
@@ -17,14 +21,72 @@ background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
-/* Global container for pages */
 .container {
   width: 100%;
-  max-width: 1024px; /* desktop width */
+  max-width: 1024px;
   padding: 20px;
   margin: 0 auto;
 }
 
+:root {
+  --bg-color: #ffffff;
+  --text-color: #213547;
+  --card-bg: #ffffff;
+  --card-text: #444;
+  --link-color: #646cff;
+  --link-hover: #747bff;
+  --button-bg: #f9f9f9;
+  --button-text: #213547;
+  --button-border: #646cff;
+}
+
+[data-theme='dark'] {
+  --bg-color: #1b1b2f;          /* soft navy purple */
+  --text-color: #fef6f9;        /* soft off-white */
+  --card-bg: #2a2a44;           /* gentle purple card bg */
+  --card-text: #fef6f9;         /* off-white text */
+  --link-color: #f9c6d3;        /* soft pink links */
+  --link-hover: #ffc0cb;        /* lighter pink hover */
+  --button-bg: #2a2a44;         /* gentle purple button bg */
+  --button-text: #fef6f9;       /* off-white button text */
+  --button-border: #f9c6d3;     /* soft pink border */
+}
+
+.post-card {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--button-border);
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+button:hover {
+  background-color: var(--button-text);
+  color: var(--button-bg);
+  border-color: var(--button-border);
+}
 

@@ -1,7 +1,19 @@
+:root {
+  --color-text-primary: #282c34;
+  --color-button-bg: #61dafb;
+  --color-button-bg-hover: #21a1c4;
+  --color-error: #d32f2f;
+  --color-text-secondary: #666;
+  --color-link: ##61dafb;
+}
+
 .container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 2rem;
+  max-width: 450px;       /* same width as login/register */
+  margin: 0 auto;         /* center horizontally */
+  padding: 2.5rem;        /* same padding as forms */
+  border-radius: 8px;     /* optional card-like look */
+  box-shadow: 0 2px 12px rgba(110, 70, 130, 0.15); /* soft shadow */
+  background-color: var(--card-bg); /* supports dark/light mode */
 }
 
 .home-header {
@@ -12,14 +24,14 @@ margin-bottom: 2rem;
 }
 
 .home-header h1 {
-color: #282c34;
+color: var(--color-text-primary);
 margin: 0;
 }
 
 .create-post-button {
 padding: 0.75rem 1.5rem;
-background-color: #61dafb;
-color: #282c34;
+background-color: var(--color-button-bg);
+color: var(--color-text-primary);
 border: none;
 border-radius: 4px;
 font-size: 1rem;
@@ -29,7 +41,7 @@ transition: background-color 0.3s;
 }
 
  .create-post-button:hover {
-   background-color: #21a1c4;
+   background-color: var(--color-button-bg-hover);
 }
 
 
@@ -40,7 +52,7 @@ margin-top: 3rem;
 }
 
 .error {
-color: #d32f2f;
+color: var(--color-error);
 }
 
 .no-post {
@@ -53,13 +65,13 @@ display: flex;
 flex-direction: column;
 }
   .auth-message {
-    color: #666;
+    color: var(--color-text-secondary);
     font-size: 1rem;
     margin: 0;
   }
 
   .auth-message a {
-    color: #61dafb;
+    color: var(--color-link);
     text-decoration: none;
     font-weight: 600;
   }
@@ -76,13 +88,13 @@ flex-direction: column;
   }
 
   .error {
-    color: #d32f2f;
+    color: var(--color-error);
   }
 
   .no-posts {
     text-align: center;
     margin-top: 3rem;
-    color: #666;
+    color: var(--color-text-secondary);
   }
 
   .posts-list {
