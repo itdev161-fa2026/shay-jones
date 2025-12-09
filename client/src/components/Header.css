@@ -1,81 +1,102 @@
-/* Header wrapper */
+/* Header container */
 .header {
-    background-color: #282c34;
-    color: white;
-    padding: 2rem 0;
-    box-shadow: 0, 2px, 4px, rgba(0, 0, 0, 0);
+  width: 100%;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem 0; 
+  box-shadow: 0 2px 4px rgba(143, 115, 115, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 150px;
 }
 
-/* Content container (centers and limits width) */
+/* Inner container centers content */
 .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* Title area (logo + text) */
+
+/* Title link */
 .header-title {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 /* H1 inside title */
 .header-title h1 {
-   margin: 0;
-   font-size: 1.8rem;
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1.5px; /* space between letters */
+  word-spacing: 5px;     /* space between words */
 }
 
-/* Navigation (links) */
+/* Navigation */
 .header-nav {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
- 
-}
-
-/* Navigation (links) */
-.header-nav {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /* Individual nav link */
 .nav-link {
-    color: white; /* medium slate */
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s, transform 0.3s;
+  color: var(--nav-link);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .nav-link:hover {
-    color: #61dafb;
-    transform: scale(1.1); /* subtle grow on hover */
+  color: var(--nav-link-hover);
+  transform: scale(1.1);
 }
 
+/* User welcome text */
 .user-welcome {
-    color: #61dafb;
-    font-size: 1rem;
-    font-weight: 500;
+  color: #61dafb;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
+/* Buttons */
 .nav-button {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s;
+  background-color: var(--nav-button-bg);
+  color: var(--nav-button-text);
+  border: 2px solid var(--nav-button-border);
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 .nav-button:hover {
-    background-color: white;
-    color: #282c34;
-    transform: scale(1.05); /* subtle hover effect */
+  background-color: var(--nav-button-text);
+  color: var(--nav-button-bg);
+  transform: scale(1.05);
+}
+
+/* Theme toggle button */
+.theme-toggle-button {
+  margin-left: 12px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #444;
+  color: white;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+
+.theme-toggle-button:hover {
+  background-color: #666;
 }

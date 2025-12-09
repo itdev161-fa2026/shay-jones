@@ -1,5 +1,45 @@
+/* Palette variables for light/dark mode and cute vibes! */
+:root {
+  --card-bg: #fff;
+  --card-bg-dark: #23272f;
+  --text-main: #282c34;
+  --text-main-dark: #f2f2f2;
+  --text-secondary: #666;
+  --text-secondary-dark: #b7b7b7;
+  --text-body: #444;
+  --text-body-dark: #e0e0e0;
+  --border-color: #f0f0f0;
+  --border-color-dark: #393d47;
+  --link: #61dafb;
+  --link-hover: #21a1c4;
+  --button-bg: #61dafb;
+  --button-bg-hover: #21a1c4;
+  --button-text: #282c34;
+  --button-text-dark: #23272f;
+  --error: #d32f2f;
+  --error-bg: #ffd6d6;
+  --error-dark: #ff6f6f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg: var(--card-bg-dark);
+    --text-main: var(--text-main-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --text-body: var(--text-body-dark);
+    --border-color: var(--border-color-dark);
+    --link: #7fdcff;
+    --link-hover: #44b8da;
+    --button-bg: #7fdcff;
+    --button-bg-hover: #44b8da;
+    --button-text: var(--button-text-dark);
+    --error: var(--error-dark);
+    --error-bg: #3a2323;
+  }
+}
+
 .post-detail {
-background: white;
+background: var(--card-bg);
 border-radius: 8px;
 padding: 2rem;
 margin-top: 1.5rem;
@@ -7,30 +47,31 @@ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .post-detail h1 {
-color: #282c34;
+color: var(--text-main);
 margin: 0 0 1rem 0;
 font-size: 2.5rem;
 line-height: 1.2;
 }
 
-post-detail-meta {
+/* Fixed selector: should be .post-detail-meta not post-detail-meta */
+.post-detail-meta {
 display: flex;
 gap: 1.5rem;
 padding-bottom: 1.5rem;
 margin-bottom: 1.5rem;
-border-bottom: 2px solid #f0f0f0;
-color: #666;
+border-bottom: 2px solid var(--border-color);
+color: var(--text-secondary);
 }
 
 .post-detail-author {
 font-weight: 600;
-color: #282c34;
+color: var(--text-main);
 }
 
 .post-detail-body {
 font-size: 1.1rem;
 line-height: 1.8;
-color: #444;
+color: var(--text-body);
 margin-bottom: 2rem;
 }
 
@@ -42,13 +83,13 @@ margin-bottom: 1rem;
   display: flex;
   gap: 1rem;
   padding-top: 2rem;
-  border-top: 2px solid #f0f0f0;
+  border-top: 2px solid var(--border-color);
 }
 
 .edit-button {
   padding: 0.75rem 1.5rem;
-  background-color: #61dafb;
-  color: #282c34;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -58,14 +99,14 @@ margin-bottom: 1rem;
 }
 
 .edit-button:hover {
-  background-color: #21a1c4;
+  background-color: var(--button-bg-hover);
 }
 
 .delete-button {
   padding: 0.75rem 1.5rem;
   background-color: transparent;
-  color: #d32f2f;
-  border: 2px solid #d32f2f;
+  color: var(--error);
+  border: 2px solid var(--error);
   border-radius: 4px;
   font-size: 1rem;
   font-weight: 600;
@@ -74,22 +115,22 @@ margin-bottom: 1rem;
 }
 
 .delete-button:hover {
-  background-color: #d32f2f;
-  color: white;
+  background-color: var(--error);
+  color: #fff;
 }
 
 .back-button {
-background: none;
-border: none;
-color: #61dafb;
-font-size: 1rem;
-cursor: pointer;
-padding: 0.5rem 0;
-font-weight: 500;
-transition: color 0.3s;
+  background: none;
+  border: none;
+  color: var(--link);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 .back-button:hover {
-color: #21a1c4;
-text-decoration: underline;
+  color: var(--link-hover);
+  text-decoration: underline;
 }
