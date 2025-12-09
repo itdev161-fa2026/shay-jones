@@ -7,7 +7,7 @@
 - Dark Mode Toggle added in the header to switch between light and dark mode with preference in localStorage
 
 ### Video Demonstration
-[Link to video]
+https://matc.yuja.com/V/Video?v=14743925&node=63331691&a=5898072
 
 ### Features Added for Toast Notifications 
 - Success and error notifications for post creation and editing
